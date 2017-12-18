@@ -3,3 +3,4 @@
   hosts: all
   roles:
     - role: banners
+      banner_updated: false
