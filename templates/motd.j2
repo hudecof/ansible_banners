@@ -1,0 +1,30 @@
+**********************************************************************
+Hostname:             {{ inventory_hostname  }}
+Distribution:         {{ ansible_distribution }} {{ ansible_distribution_release }} ({{ ansible_distribution_version }})
+
+Processors:       {{ ansible_processor_vcpus }}
+Memory Installed: {{ (ansible_memtotal_mb / 1024) | round(1) }}GB
+Memory Swapfile:  {{ (ansible_swaptotal_mb / 1024) | round(1) }}GB
+Mounts:
+{% for mnt in ansible_mounts %}
+{%   if mnt.size_total != none %}
+  Mount: {{ mnt.device }} ({{ mnt.mount }}) ({{ (mnt.size_total / 1024 / 1024 / 1024)| round(1) }}GB)
+{%   endif %}
+{% endfor %}
+
+{% if ansible_default_ipv4['address'] is defined %}
+IPv4 default address:	{{ ansible_default_ipv4['address'] }} ({{ ansible_default_ipv4['interface'] }})
+{% endif %}
+{% if ansible_default_ipv6['address'] is defined %}
+IPv6 default address:	{{ ansible_default_ipv6['address'] }} ({{ ansible_default_ipv6['interface'] }})
+{% endif %}
+
+Kernel:              {{ ansible_kernel }}
+{% if ansible_virtualization_role is defined %}
+Virtualization Role: {{ ansible_virtualization_role }}
+{% endif %}
+{% if ansible_virtualization_type is defined %}
+Virtualization Type: {{ ansible_virtualization_type }}
+{% endif %}
+
+******************************** {{ template_run_date }} **********

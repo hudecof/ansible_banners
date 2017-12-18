@@ -1,0 +1,12 @@
+---
+
+- name: copy banner files
+  template:
+    src: "{{ banner_prefix }}/{{ template }}"
+    dest: "{{ file }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ files }}"
+  loop_control:
+    loop_var: file

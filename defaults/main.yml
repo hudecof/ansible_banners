@@ -1,0 +1,15 @@
+---
+# defaults file for hudecof.banners
+
+banner_prefix: .
+
+banner_issue: true
+banner_issue_files:
+  - /etc/issue
+  - /etc/issue.net
+banner_issue_template: issue.j2
+
+banner_motd: true
+banner_motd_files:
+  - /etc/motd
+banner_motd_template: motd.j2
