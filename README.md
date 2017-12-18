@@ -12,7 +12,8 @@ All variables are defined in `defaults/main.yml`
 
 ## Global
 
-- `banner_prefix` the the path prefix, where to  look for templates. Defaults is the role template, to customise set it to sometjing like `{{ playbook_dir }}/files/banners`
+- `banner_prefix`: path prefix, where to  look for templates. Defaults is the role template, to customise set it to sometjing like `{{ playbook_dir }}/files/banners`
+- `banner_updated`: should be the last updated date show?
 
 ## ISSUE
 

@@ -13,3 +13,5 @@ banner_motd: true
 banner_motd_files:
   - /etc/motd
 banner_motd_template: motd.j2
+
+banner_updated: true

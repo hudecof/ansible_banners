@@ -28,5 +28,8 @@ Virtualization Role: {{ ansible_virtualization_role }}
 {% if ansible_virtualization_type is defined %}
 Virtualization Type: {{ ansible_virtualization_type }}
 {% endif %}
-
+{% if banner_updated -%}
 ******************************** {{ template_run_date }} **********
+{% else %}
+**********************************************************************
+{%- endif %}
