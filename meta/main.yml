@@ -1,10 +1,11 @@
+---
 galaxy_info:
   author: Peter Hudec
   description: write banners for MOTD and ISSUE
   company: CNC, a.s.
   license: BSD
 
-  min_ansible_version: 1.6
+  min_ansible_version: 2.1
 
   platforms:
   - name: EL
