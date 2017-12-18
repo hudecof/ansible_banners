@@ -5,17 +5,19 @@ Distribution:         {{ ansible_distribution }} {{ ansible_distribution_release
 Processors:       {{ ansible_processor_vcpus }}
 Memory Installed: {{ (ansible_memtotal_mb / 1024) | round(1) }}GB
 Memory Swapfile:  {{ (ansible_swaptotal_mb / 1024) | round(1) }}GB
+{% if ansible_mounts is defined %}
 Mounts:
 {% for mnt in ansible_mounts %}
 {%   if mnt.size_total != none %}
   Mount: {{ mnt.device }} ({{ mnt.mount }}) ({{ (mnt.size_total / 1024 / 1024 / 1024)| round(1) }}GB)
 {%   endif %}
 {% endfor %}
+{% endif %}
 
-{% if ansible_default_ipv4['address'] is defined %}
+{% if ansible_default_ipv4 is defined and ansible_default_ipv4['address'] is defined %}
 IPv4 default address:	{{ ansible_default_ipv4['address'] }} ({{ ansible_default_ipv4['interface'] }})
 {% endif %}
-{% if ansible_default_ipv6['address'] is defined %}
+{% if ansible_default_ipv6 is defined and ansible_default_ipv6['address'] is defined %}
 IPv6 default address:	{{ ansible_default_ipv6['address'] }} ({{ ansible_default_ipv6['interface'] }})
 {% endif %}
 
