@@ -1,0 +1,20 @@
+---
+sudo: required
+
+language: python
+
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - pip install ansible
+
+script:
+  - ansible --version
+  - cd tests
+  - ansible-playbook -i inventory test.yml --syntax-check --list-tasks -vvvv
+  - ansible-playbook -i inventory test.yml
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

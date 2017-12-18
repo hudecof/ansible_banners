@@ -1,0 +1,13 @@
+---
+image: hudecof/ansible-tests:latest
+
+before_script:
+  - pip install -U setuptools pip
+  - pip install wheel
+  - pip install ansible
+test:
+  script:
+    - cd tests
+    - ansible --version
+    - ansible-playbook -i inventory test.yml --syntax-check --list-tasks -vvvv
+    - ansible-playbook -i inventory test.yml
