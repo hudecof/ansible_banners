@@ -6,11 +6,11 @@
   when: banner_issue
   tags:
     - banners
-    - banners.issue
+    - banners:issue
 
 - name: copy MOTD files
   include: common-copy.yml files={{ banner_motd_files }} template={{ banner_motd_template }}
-  when: banner_issue
+  when: banner_motd
   tags:
     - banners
-    - banners.motd
+    - banners:motd
