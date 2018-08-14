@@ -12,18 +12,18 @@ All variables are defined in `defaults/main.yml`
 
 ## Global
 
-- `banner_prefix`: path prefix, where to  look for templates. Defaults is the role template, to customise set it to sometjing like `{{ playbook_dir }}/files/banners`
+- `banner_prefix`: path prefix, where to  look for templates. Defaults is the role template, to customize set it to something like `{{ playbook_dir }}/files/banners`
 - `banner_updated`: should be the last updated date show?
 
 ## ISSUE
 
-- `banner_issue`: should be the **/etc/issue** and **/etc/issue.net** files prcessed?
+- `banner_issue`: should be the **/etc/issue** and **/etc/issue.net** files pressed?
 - `banner_issue_files`: list of files for **issue**
 - `banner_issue_template`: name of the template file
 
 ## MOTD
 
-- `banner_motd`: should be the **/etc/motd** file prcessed?
+- `banner_motd`: should be the **/etc/motd** file pressed?
 - `banner_motd_files`: list of files for **issue**
 - `banner_motd_template`: name of the template file
 
@@ -83,4 +83,3 @@ BSD
 # Author Information
 
 Peter Hudec
-CNC, a.s.
