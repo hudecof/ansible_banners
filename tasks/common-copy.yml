@@ -1,12 +1,12 @@
 ---
 
-- name: copy banner files
-  template:
+- name: Copy banner files
+  ansible.builtin.template:
     src: "{{ banner_prefix }}/{{ template }}"
     dest: "{{ file }}"
     owner: root
     group: root
     mode: 0644
-  with_items: "{{ files }}"
+  loop: "{{ files }}"
   loop_control:
     loop_var: file
