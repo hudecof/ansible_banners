@@ -1,25 +1,21 @@
----
 galaxy_info:
   role_name: banners
+  namespace: hudecof
   author: Peter Hudec
+  company: 5ok s.r.o.
   description: write banners for MOTD and ISSUE
   license: BSD
-
   min_ansible_version: 2.1
-
   platforms:
-  - name: EL
-    versions:
-      - 6
-      - 7
-  - name: Ubuntu
-    versions:
-      - xenial
-      - bionic
-  - name: Debian
-    versions:
-      - jessie
-      - stretch
+    - name: EL
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
   galaxy_tags:
     - system
     - motd
