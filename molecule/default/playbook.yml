@@ -1,6 +1,0 @@
----
-- name: Converge
-  hosts: all
-  roles:
-    - role: hudecof.banners
-      banner_updated: false
