@@ -2,21 +2,29 @@
 # tasks file for hudecof.banners
 
 - name: Copy ISSUE files
-  ansible.builtin.include_tasks: common-copy.yml
+  ansible.builtin.include_tasks: 
+    file: common-copy.yml
+    apply:
+      tags:
+        - banners
+        - banners:issue
   vars:
       files: "{{ banner_issue_files }}"
       template: "{{ banner_issue_template }}"
   when: banner_issue
   tags:
-      - banners
-      - banners:issue
+    - always
 
 - name: Copy MOTD files
-  ansible.builtin.include_tasks: common-copy.yml
+  ansible.builtin.include_tasks: 
+    file: common-copy.yml
+    apply:
+      tags:
+      - banners
+      - banners:motd
   vars:
       files: "{{ banner_motd_files }}"
       template: "{{ banner_motd_template }}"
   when: banner_motd
   tags:
-      - banners
-      - banners:motd
+    - always
